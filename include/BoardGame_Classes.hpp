@@ -99,4 +99,39 @@ class GameManager {
 
 };
 
+
+///////////////////////////////////////////////////////////////
+// OMAR //
+///////////////////////////////////////////////////////////////
+class X_O_4x4_Player : public Player{
+public:
+    X_O_4x4_Player(int order , char symbol);
+    void get_move(int &x, int &y) override;
+
+};
+class X_O_4x4_Random_Player : public Player{
+protected:
+    int dimensionX , dimensionY;       //there is 2 dimension for
+public:
+    explicit X_O_4x4_Random_Player(char symbol , int dimensionX , int dimensionY);
+    void get_move(int &x, int &y) override;
+};
+class X_O_4x4_Board : public Board{
+private:
+    bool possible_move[7][6] = {false};
+    bool check_diagonal();
+    bool check_other_diagonal();
+public:
+    X_O_4x4_Board();
+
+    bool update_board(int x, int y, char symbol) override;
+
+    void display_board() override;
+    bool is_draw() override;
+
+    bool is_winner() override;
+
+    bool game_is_over() override;
+};
+
 #endif
