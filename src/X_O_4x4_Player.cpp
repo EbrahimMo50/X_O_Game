@@ -1,4 +1,4 @@
-#include "BoardGame_Classes.hpp"
+#include"../include/BoardGame_Classes.hpp"
 #include <iostream>
 
 void X_O_4x4_Player::get_move(int &x, int &y) {
