@@ -99,4 +99,15 @@ class GameManager {
 
 };
 
+///////////////////////////////////////////
+class Triangle_X_O:public Board{
+public:
+Triangle_X_O();
+bool update_board(int x, int y, char mark);
+void display_board();
+bool is_winner();
+bool is_draw();
+bool game_is_over();
+};
+
 #endif
