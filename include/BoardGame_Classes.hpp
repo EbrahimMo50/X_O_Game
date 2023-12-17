@@ -142,4 +142,42 @@ public:
 
 };
 
+///////////////////////////////////////////////////////////////
+// MAZEN //
+//////////////////////////////////////////////////////////////
+class board_5 {
+    protected:
+    int n_rows, n_cols;
+    char** board5;
+    int  n_moves = 0;
+
+    public:
+    virtual bool update_board (int x, int y, char symbol) = 0;
+    virtual int is_winner() = 0;
+    virtual bool is_draw() = 0;
+    virtual void display_board() = 0;
+    virtual bool game_is_over() = 0;
+};
+
+class X_O_Board_5:public board_5 {
+public:
+    X_O_Board_5 ();
+    bool update_board (int x, int y, char mark);
+    void display_board();
+    int is_winner();
+    bool is_draw();
+    bool game_is_over();
+};
+
+
+
+class GameManager_5 {
+private:
+    board_5* boardPtr;
+    Player* players[2];
+public:
+    GameManager_5(board_5*, Player* playerPtr[2]);
+    void run();
+};
+
 #endif
