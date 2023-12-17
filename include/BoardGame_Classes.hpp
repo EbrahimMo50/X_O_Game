@@ -1,7 +1,3 @@
-// Class definition for XO game classes
-// Author:  Mohammad El-Ramly
-// Date:    10/10/2022
-// Version: 1
 #ifndef _BoardGame_CLASSES_H
 #define _BoardGame_CLASSES_H
 using namespace std;
@@ -98,6 +94,17 @@ class GameManager {
         //      If draw, declare so and end
 
 };
+///////////////////////////////////////////////////////////////
+// Ebrahim//
+///////////////////////////////////////////
+class Triangle_X_O:public Board{
+public:
+Triangle_X_O();
+bool update_board(int x, int y, char mark);
+void display_board();
+bool is_winner();
+bool is_draw();
+bool game_is_over();
 
 
 ///////////////////////////////////////////////////////////////
@@ -132,6 +139,7 @@ public:
     bool is_winner() override;
 
     bool game_is_over() override;
+
 };
 
 #endif
